@@ -33,9 +33,11 @@ RFootFB.actuation_range = 117
 RFootFB.set_pulse_width_range(1050,2350)
 ##TODO \/ \/ \/
 LFootLR = kit.servo[8]
-LFootLR.set_pulse_width_range(500,2500)
+LFootLR.actuation_range = 99
+LFootLR.set_pulse_width_range(1250,2350)
 RFootLR = kit.servo[9]
-RFootLR.set_pulse_width_range(500,2500)
+RFootLR.actuation_range = 90
+RFootLR.set_pulse_width_range(850,1850)
 #WAIST
 Waist = kit.servo[10]
 #Testing
@@ -44,39 +46,30 @@ TestServo = kit.servo[15]
 position = "testing"
 
 """
-# Obsolete, kept for reference
+Ranges:
+LKnee: 0-60, default 0
+RKnee: 0-60, default 60
+LHipFB: 0-90, default 15
+RHipFB: 0-90, default 75
+LHipLR: 0-60, default 0
+RHipLR: 0-60, default 60
+LFootFB: 0-117, default 25
+RFootFB: 0-117, default 92
+LFootLR: 0-99, default 77
+RFootLR: 0-90, default 18
 
-if position == "standing":
-	print("Now Standing")
-	LKnee.angle = 110
-	RKnee.angle = 85
-	LHipFB.angle = 15
-	RHipFB.angle = 165
-	LHipLR.angle = 30
-	RHipLR.angle = 165
-	LFootFB.angle = 30
-	RFootFB.angle = 160
-	LFootLR.angle = 150
-	RFootLR.angle = 50
 """
 
 #Soon to be the default standing position
 if position == "testing": 
 	LKnee.angle = 0
 	RKnee.angle = 60
-	LHipFB.angle = 15
-	RHipFB.angle = 75
+	LHipFB.angle = 0 + 15
+	RHipFB.angle = 90 - 15
 	LHipLR.angle = 0
 	RHipLR.angle = 60
 	LFootFB.angle = 0 + 25 
 	RFootFB.angle = 117 - 25
+	LFootLR.angle = 99 - 22
+	RFootLR.angle = 0 + 18
 	
-	#TODO - Tune PWM Range of LFoot and RFoot LR
-	
-	
-
-
-
-
-
-
